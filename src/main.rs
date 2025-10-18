@@ -70,4 +70,31 @@ fn main() {
     for n in numbers {
         println!("{}", n);
     }
+
+    // breaks and continues
+
+    for i in 1..=10 {
+        if i % 2 == 0 {
+            continue;
+        }
+        println!("i {}", i);
+        if i == 7 {
+            break;
+        }
+    }
+
+    // match
+    // let name = "Hello";
+    println!("Please enter a greeting:");
+    let mut name = String::new();
+    io::stdin()
+        .read_line(&mut name)
+        .expect("Failed to read input");
+
+    match name.to_lowercase().trim() {
+        "good bye" => println!("Sorry to see you go."),
+        "hello" => println!("Hi, nice to meet you!"),
+        //Catch all
+        _ => println!("I can't find a greeting, good bye"),
+    }
 }
