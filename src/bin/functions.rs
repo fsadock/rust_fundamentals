@@ -31,9 +31,11 @@ fn sum(numbers: &[i32]) -> i32 {
     result
 }
 
-fn own_vec(mut vector: Vec<i32>) {
-    vector.push(10);
-    println!("{:?}", vector);
+fn own_vec() -> Vec<i32> {
+    let mut new_vector = Vec::new();
+    new_vector.push(10);
+    new_vector
+    // println!("{:?}", vector);
 }
 
 fn own_integer(x: i32) {
@@ -53,7 +55,7 @@ fn main() {
     let result = sum(&numbers);
     println!("The sum is {}", result);
 
-    let mut my_vec = vec![1, 2, 3, 4, 5];
+    // let mut my_vec = vec![1, 2, 3, 4, 5];
     let my_int = 10;
     let my_string = String::from("Hello, World!");
 
@@ -62,4 +64,7 @@ fn main() {
 
     own_string(&my_string); // take ownership of my_string
     println!("{:?}", my_string);
+
+    let new_vector = own_vec();
+    println!("{:?}", new_vector);
 }
