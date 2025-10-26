@@ -38,8 +38,8 @@ fn own_vec() -> Vec<i32> {
     // println!("{:?}", vector);
 }
 
-fn own_integer(x: i32) {
-    x + 1;
+fn own_integer(x: i32) -> i32 {
+    x + 1
 }
 
 fn own_string(s: &String) {
